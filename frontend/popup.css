@@ -1,0 +1,50 @@
+/* Styles ONLY for popup.html */
+body {
+  font-family: sans-serif;
+  width: 280px; /* A specific width for the popup window */
+  padding: 15px;
+  background-color: #f7f7f7;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.3em; /* Restored font size for better look */
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+p {
+  font-size: 0.9em; /* Restored font size */
+  color: #555;
+  margin-top: 0;
+}
+
+select,
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+select {
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
