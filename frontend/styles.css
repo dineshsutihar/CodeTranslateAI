@@ -1,0 +1,41 @@
+body {
+  font-family: sans-serif;
+  width: 250px;
+  padding: 10px;
+}
+.container {
+  text-align: center;
+}
+h1 {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+p {
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 0;
+}
+select,
+button {
+  width: 100%;
+  padding: 8px;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Style for the element picker highlight (SAFE to inject on any page) */
+.translator-highlight {
+  outline: 2px dashed #007bff !important;
+  background-color: rgba(0, 123, 255, 0.1) !important;
+  cursor: crosshair !important;
+}
