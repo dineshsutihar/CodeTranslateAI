@@ -1,9 +1,11 @@
 {
   "manifest_version": 3,
   "name": "CodeTranslateAI",
-  "version": "0.1.0",
-  "description": "Select code on a page and translate it on the fly.",
+  "version": "1.0.1",
+  "description": "Select code on a page and get instant AI-powered translations in a clean, tabbed interface.",
+  "author": "Dinesh Kumar Sutihar",
   "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["https://*.workers.dev/"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
