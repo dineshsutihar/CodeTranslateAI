@@ -5,8 +5,21 @@
   "description": "Select code on a page and translate it on the fly.",
   "permissions": ["activeTab", "scripting", "storage"],
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/icons/icon16.png",
+      "32": "images/icons/icon32.png",
+      "48": "images/icons/icon48.png",
+      "128": "images/icons/icon128.png"
+    }
   },
+  "icons": {
+    "16": "images/icons/icon16.png",
+    "32": "images/icons/icon32.png",
+    "48": "images/icons/icon48.png",
+    "128": "images/icons/icon128.png"
+  },
+
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
