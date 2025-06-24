@@ -119,7 +119,7 @@ function injectOrUpdateTranslations(translations, originalElement, width) {
         }
         code {
             font-family: monospace;
-            font-size: 0.65em;
+            font-size: 14px;
             color: #24292e;
             line-height: 1;
         }
