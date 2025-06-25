@@ -4,7 +4,7 @@
   "version": "1.0.1",
   "description": "Select code on a page and get instant AI-powered translations in a clean, tabbed interface.",
   "author": "Dinesh Kumar Sutihar",
-  "permissions": ["activeTab", "scripting", "storage"],
+  "permissions": ["activeTab", "storage"],
   "host_permissions": ["https://*.workers.dev/"],
   "action": {
     "default_popup": "popup.html",
