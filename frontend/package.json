@@ -1,0 +1,12 @@
+{
+  "name": "code-translate-ai",
+  "version": "1.2.0",
+  "description": "Select code on a page and get instant AI-powered translations in a clean, tabbed interface.",
+  "author": "Dinesh Kumar Sutihar",
+  "scripts": {
+    "build": "esbuild scripts/content.js --bundle --outfile=dist/content.bundle.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.8"
+  }
+}
