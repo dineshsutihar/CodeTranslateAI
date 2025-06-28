@@ -3,10 +3,12 @@
   "version": "1.2.0",
   "description": "Select code on a page and get instant AI-powered translations in a clean, tabbed interface.",
   "author": "Dinesh Kumar Sutihar",
+  "type": "module",
   "scripts": {
-    "build": "esbuild scripts/content.js --bundle --outfile=dist/content.bundle.js"
+    "build": "node build.js"
   },
   "devDependencies": {
+    "dotenv": "^17.2.1",
     "esbuild": "^0.25.8"
   }
 }
