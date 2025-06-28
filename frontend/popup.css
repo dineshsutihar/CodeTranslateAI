@@ -35,13 +35,13 @@ body {
 }
 
 h1 {
-  font-size: 1.4em;
+  font-size: 1.5em;
   margin: 0 0 8px 0;
   font-weight: 600;
 }
 
 p {
-  font-size: 0.9em;
+  font-size: 1em;
   color: var(--subtle-text-color);
   margin: 0 0 20px 0;
 }
@@ -103,7 +103,7 @@ button:hover {
 }
 
 .theme-label {
-  font-size: 0.9em;
+  font-size: 1.2 em;
   color: var(--subtle-text-color);
 }
 
@@ -150,4 +150,17 @@ input:checked + .slider {
 
 input:checked + .slider:before {
   transform: translateX(22px);
+}
+
+.footer {
+  border-top: 1px solid var(--border-color);
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: var(--subtle-text-color);
+  padding-top: 20px;
+  text-align: center;
+}
+
+.footer p {
+  margin: 4px 0;
 }
