@@ -5,10 +5,9 @@ CodeTranslateAI is a powerful Chrome extension that allows you to translate code
 ## ✨ Key Features
 
 - **On-the-Fly Translation:** Instantly translate code on platforms like Stack Overflow, Medium, and technical blogs.
-- **Secure Serverless Backend:** Uses a Cloudflare Worker so your AI API key is never exposed on the frontend.
+- **Secure Serverless Backend:** Uses a Cloudflare Worker.
 - **Multi-Language Tabs:** Translate the same code block into multiple languages and switch between them easily.
 - **Smart Caching:** Translations are cached in your browser for 10 days to reduce API calls and provide instant results.
-- **Elegant & Isolated UI:** A clean UI that matches the width of the original code block and uses a Shadow DOM to prevent any style conflicts with the host page.
 - **Powered by Gemini:** Leverages Google's Gemini AI for high-quality code translations with syntax highlighting.
 
 ---
@@ -17,7 +16,7 @@ CodeTranslateAI is a powerful Chrome extension that allows you to translate code
 
 - **Frontend:**
   - Modular JavaScript (ES6+)
-  - **esbuild** (for bundling)
+  - **esbuild** & **dotenv** (for bundling and environment variables)
   - HTML5 & CSS3
   - Chrome Extension APIs (`storage`, `activeTab`)
   - Shadow DOM for style isolation.
@@ -102,17 +101,45 @@ You must have **Node.js** and **npm** installed on your machine.
 
 3.  **Configure the Backend URL**
 
-    - Open the `background.js` file.
-    - Find the `BACKEND_URL` constant and **paste the Cloudflare Worker URL** you copied in the previous step.
+    - In the `frontend` folder, create a new file named `.env`.
+    - Add the Cloudflare Worker URL you copied in the previous step to this file:
 
-    ```javascript
-    // background.js
-    const BACKEND_URL = "https://backend.exampledinesh.workers.dev"; // PASTE YOUR URL HERE
+    <!-- end list -->
+
+    ```
+    # .env file
+    BACKEND_URL="https://your-worker-url.workers.dev"
     ```
 
-4.  **Build the Extension**
+4.  **Create the Build Configuration**
 
-    - You must run the build command to bundle the modular JavaScript files.
+    - In the `frontend` folder, create a file named `build.js` and add the following content. This file tells our build script how to use the `.env` variable.
+
+    <!-- end list -->
+
+    ```javascript
+    // build.js
+    import esbuild from "esbuild";
+    import "dotenv/config";
+
+    const define = {};
+    for (const k in process.env) {
+      define[`process.env.${k}`] = JSON.stringify(process.env[k]);
+    }
+
+    esbuild
+      .build({
+        entryPoints: ["scripts/content.js", "background.js"],
+        bundle: true,
+        outdir: "dist",
+        define: define,
+      })
+      .catch(() => process.exit(1));
+    ```
+
+5.  **Build the Extension**
+
+    - Run the build command to bundle your scripts and inject the environment variable.
 
     <!-- end list -->
 
@@ -120,9 +147,9 @@ You must have **Node.js** and **npm** installed on your machine.
     npm run build
     ```
 
-    This will create a `dist` folder containing the `content.bundle.js` file.
+    This will create a `dist` folder containing your final `content.js` and `background.js` files.
 
-5.  **Load the Extension in Chrome**
+6.  **Load the Extension in Chrome**
 
     - Open Google Chrome and navigate to `chrome://extensions`.
     - Enable **"Developer mode"**.
@@ -135,9 +162,7 @@ The **CodeTranslateAI** icon should now appear in your Chrome toolbar\!
 
 ## 💻 Development Workflow
 
-When you make changes to the frontend JavaScript files in the `scripts/` folder, you must re-bundle them before you can see the changes.
-
-1.  Save your changes in any `.js` file inside the `scripts/` folder.
+1.  Make any changes to your JavaScript files in the `scripts/` folder or `background.js`.
 2.  Run the build command in your terminal:
     ```sh
     npm run build
