@@ -8,17 +8,39 @@
   <body>
     <div class="container">
       <h1>CodeTranslateAI</h1>
-      <p>Select your target language and enable the picker.</p>
+      <p>Select a language and enable the picker.</p>
 
-      <select id="language-select">
-        <option value="Java">Java</option>
-        <option value="Python">Python</option>
-        <option value="JavaScript">JavaScript</option>
-        <option value="C++">C++</option>
-        <option value="Ruby">Ruby</option>
-      </select>
+      <div class="select-wrapper">
+        <select id="language-select">
+          <option value="C">C</option>
+          <option value="Csharp">C#</option>
+          <option value="Cpp">C++</option>
+          <option value="Go">Go</option>
+          <option value="Java">Java</option>
+          <option value="Kotlin">Kotlin</option>
+          <option value="Rust">Rust</option>
+          <option value="Swift">Swift</option>
+          <option value="TypeScript">TypeScript</option>
+          <option value="JavaScript">JavaScript</option>
+          <option value="PHP">PHP</option>
+          <option value="Python">Python</option>
+          <option value="Ruby">Ruby</option>
+        </select>
+      </div>
 
       <button id="enable-picker-btn">Enable Code Selector</button>
+
+      <div class="theme-switcher">
+        <span class="theme-label">Dark Mode</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="theme-toggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+    <div class="footer">
+      <p>CodeTranslateAI © 2025</p>
+      <p>Version 2.0.0</p>
     </div>
     <script src="popup.js"></script>
   </body>
