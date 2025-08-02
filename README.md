@@ -1,14 +1,42 @@
 # CodeTranslateAI 🚀
 
-CodeTranslateAI is a powerful Chrome extension that allows you to translate code snippets on any webpage in real-time. Simply select a block of code, choose your target language, and get an AI-powered translation instantly injected into the page in a clean, tabbed interface.
+<p align="center">
+  <img src="/mnt/code/Codes/FullStack/projects/CodeTranslateAI/frontend/images/icons/icon128.png" alt="CodeTranslateAI Logo" width="128">
+</p>
 
-## ✨ Key Features
+<h3 align="center">Seamless On-Page Code Translation, Powered by AI</h3>
 
-- **On-the-Fly Translation:** Instantly translate code on platforms like Stack Overflow, Medium, and technical blogs.
-- **Secure Serverless Backend:** Uses a Cloudflare Worker.
-- **Multi-Language Tabs:** Translate the same code block into multiple languages and switch between them easily.
-- **Smart Caching:** Translations are cached in your browser for 10 days to reduce API calls and provide instant results.
-- **Powered by Gemini:** Leverages Google's Gemini AI for high-quality code translations with syntax highlighting.
+<p align="center">
+  CodeTranslateAI is a powerful browser extension that allows you to translate code snippets on any webpage in real-time. Simply select a block of code, choose your target language, and get an AI-powered translation instantly.
+</p>
+
+<p align="center">
+    <p align="center">
+        <a href="https://chromewebstore.google.com/detail/cbopkkjljoiabjobmjhmoaglkiffgpel?utm_source=item-share-cb" style="text-decoration: none;">
+            <img src="https://img.shields.io/badge/Download%20for%20Chrome-Click%20to%20Install-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Download for Chrome" />
+        </a>
+        &nbsp;&nbsp;
+        <a href="https://microsoftedge.microsoft.com/addons/detail/codetranslateai/lkdmdgdalcmbhfjakgmgljkknmbafbjp" style="text-decoration: none;">
+            <img src="https://img.shields.io/badge/Download%20for%20Edge-Click%20to%20Install-0078D7?style=for-the-badge&logo=microsoftedge&logoColor=white" alt="Download for Edge" />
+        </a>
+    </p>
+    <p align="center">
+        <b>
+            Choose your browser and click the button above to download and install CodeTranslateAI instantly!
+        </b>
+    </p>
+
+---
+
+## ✨ Features in Action
+
+See CodeTranslateAI work seamlessly on any webpage. Select code, and the translated version appears right beside it in a clean, tabbed interface with syntax highlighting.
+
+## ![CodeTranslateAI in action](/promotional/Extension%2001.png)
+
+## ![CodeTranslateAI in action](/promotional/Extension%2002.png)
+
+## ![CodeTranslateAI in action](/promotional/Extension%2003.png)
 
 ---
 
