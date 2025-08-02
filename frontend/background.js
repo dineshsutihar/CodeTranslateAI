@@ -1,7 +1,7 @@
 
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+chrome.runtime.onMessage.addListener((request, _, sendResponse) => {
     if (request.type === "TRANSLATE_CODE") {
-        const BACKEND_URL = "https://backend.dineshsutihar123.workers.dev";
+        const BACKEND_URL = process.env.BACKEND_URL;
 
         chrome.storage.sync.get(['targetLanguage'], (result) => {
             const targetLanguage = result.targetLanguage || 'Java';

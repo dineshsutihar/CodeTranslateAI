@@ -1,10 +1,10 @@
 {
   "manifest_version": 3,
   "name": "CodeTranslateAI",
-  "version": "1.0.1",
-  "description": "Select code on a page and get instant AI-powered translations in a clean, tabbed interface.",
+  "version": "1.1.0",
+  "description": "Select code on a page and get instant AI-powered translation.",
   "author": "Dinesh Kumar Sutihar",
-  "permissions": ["activeTab", "scripting", "storage"],
+  "permissions": ["activeTab", "storage"],
   "host_permissions": ["https://*.workers.dev/"],
   "action": {
     "default_popup": "popup.html",
@@ -25,11 +25,18 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content.js"],
+      "js": ["packages/prism.js", "dist/scripts/content.js"],
       "css": ["styles.css"]
     }
   ],
   "background": {
-    "service_worker": "background.js"
-  }
+    "service_worker": "dist/background.js",
+    "type": "module"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["packages/prism.css"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }
