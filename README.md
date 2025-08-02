@@ -1,7 +1,7 @@
 # CodeTranslateAI 🚀
 
 <p align="center">
-  <img src="/mnt/code/Codes/FullStack/projects/CodeTranslateAI/frontend/images/icons/icon128.png" alt="CodeTranslateAI Logo" width="128">
+  <img src="frontend/images/icons/icon128.png" alt="CodeTranslateAI Logo" width="128">
 </p>
 
 <h3 align="center">Seamless On-Page Code Translation, Powered by AI</h3>
