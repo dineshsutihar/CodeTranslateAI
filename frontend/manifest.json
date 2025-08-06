@@ -38,5 +38,13 @@
       "resources": ["packages/prism.css"],
       "matches": ["<all_urls>"]
     }
-  ]
+  ],
+  "commands": {
+    "enable-code-selection": {
+      "suggested_key": {
+        "default": "Alt+T" 
+      },
+      "description": "Activate code selection mode."
+    }
+  }
 }
