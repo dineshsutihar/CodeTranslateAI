@@ -42,7 +42,7 @@ chrome.runtime.onMessage.addListener((request, _, sendResponse) => {
 });
 //Default commmand = Alt+T , Mac  = Option+T
 chrome.commands.onCommand.addListener((command) => {
-  if (command === "enable-code-selection") {
+  if (command === "translate") {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       if (tabs.length > 0) {
         chrome.tabs.sendMessage(tabs[0].id, { type: "ENABLE_PICKER" });

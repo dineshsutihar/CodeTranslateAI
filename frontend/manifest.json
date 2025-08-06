@@ -40,11 +40,12 @@
     }
   ],
   "commands": {
-    "enable-code-selection": {
+    "translate": {
       "suggested_key": {
-        "default": "Alt+T" 
+        "default": "Alt+Shift+A",
+        "mac": "Alt+Shift+A"
       },
-      "description": "Activate code selection mode."
+      "description": "Translate selected text"
     }
   }
 }
