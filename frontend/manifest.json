@@ -38,5 +38,14 @@
       "resources": ["packages/prism.css"],
       "matches": ["<all_urls>"]
     }
-  ]
+  ],
+  "commands": {
+    "translate": {
+      "suggested_key": {
+        "default": "Alt+Shift+A",
+        "mac": "Alt+Shift+A"
+      },
+      "description": "Translate selected text"
+    }
+  }
 }
