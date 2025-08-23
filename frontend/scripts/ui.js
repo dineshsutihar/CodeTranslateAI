@@ -110,7 +110,7 @@ export function injectOrUpdateTranslations(
     codeWrapper.className = "code-wrapper";
     const copyButton = document.createElement("div");
     copyButton.className = "copy-button";
-    copyButton.innerText = "copy";
+    copyButton.innerText = "Copy";
     copyButton.addEventListener("click", () => {
       navigator.clipboard.writeText(translations[lang]).then(() => {
         copyButton.innerText = "Copied!";

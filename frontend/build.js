@@ -1,10 +1,9 @@
 import esbuild from "esbuild";
 import "dotenv/config";
 
-const define = {};
-for (const k in process.env) {
-  define[`process.env.${k}`] = JSON.stringify(process.env[k]);
-}
+const define = {
+  "process.env.BACKEND_URL": JSON.stringify(process.env.BACKEND_URL || ""),
+};
 
 esbuild
   .build({
