@@ -20,12 +20,12 @@ async function handleElementClick(e) {
 
   const cacheKey = `translation_${hashCode(selectedCode)}`;
   const originalWidth = clickedElement.getBoundingClientRect().width;
-  const { targetLanguage } = await chrome.storage.sync.get("targetLanguage");
+  const { targetLanguage, theme } = await chrome.storage.sync.get(["targetLanguage", "theme"]);
   const lang = targetLanguage;
   const cachedData = await getFromCache(cacheKey);
 
   if (cachedData && cachedData[lang]) {
-    injectOrUpdateTranslations(cachedData, clickedElement, originalWidth);
+    injectOrUpdateTranslations(cachedData, clickedElement, originalWidth,theme);
     return;
   }
 

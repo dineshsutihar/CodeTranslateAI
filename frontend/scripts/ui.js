@@ -1,7 +1,8 @@
 export function injectOrUpdateTranslations(
   translations,
   originalElement,
-  width
+  width,
+  currentTheme
 ) {
   const componentStyles = `
         .tab-nav {
@@ -42,33 +43,67 @@ export function injectOrUpdateTranslations(
             right: 8px;
             padding: 6px 12px;
             font-size: 14px;
-            background-color: rgba(255, 255, 255, 0.08); /* soft overlay */
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: rgba(0, 0, 0, 0.05); /* soft overlay */
+            border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 4px;
-            color: #f0f0f0;
+            color: #333;
             cursor: pointer;
             transition: background-color 0.3s, border-color 0.3s, color 0.3s;
             z-index: 10;
         }
         .copy-button:hover {
-            background-color: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 255, 255, 0.3);
-            color: #ffffff;
+            background-color: rgba(0, 0, 0, 0.1);
+            border-color: rgba(0, 0, 0, 0.2);
+            color: #000;
         }
         .copy-button:active {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(0, 0, 0, 0.15);
         }
         pre {
             margin: 0;
             white-space: pre-wrap;
             word-wrap: break-word;
+            
         }
         code {
             font-family: monospace;
             font-size: 0.8em;
         }
+        .dark .tab-nav {
+            border-bottom: 1px solid #3e3e42;
+            background-color: #2d2d30;
+        }
+        .dark .tab-link {
+            color: #969696;
+        }
+        .dark .tab-link:hover {
+            background-color: #3e3e42;
+        }
+        .dark .tab-link.active {
+            color: #4a9eff;
+            border-bottom: 3px solid #4a9eff;
+        }
+        .dark .copy-button {
+            background-color: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #f0f0f0;
+        }
+        .dark .copy-button:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+        }
+        .dark .copy-button:active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .dark pre {
+            background-color: #1e1e1e;
+            color: #cccccc;
+        }
+        .dark code {
+            color: #cccccc;
+        }
     `;
-
   let container = originalElement.nextElementSibling;
 
   if (!container || container.id !== "my-code-translator-container") {
@@ -77,13 +112,19 @@ export function injectOrUpdateTranslations(
     const shadowRoot = container.attachShadow({ mode: "open" });
     const prismTheme = document.createElement("link");
     prismTheme.rel = "stylesheet";
-    prismTheme.href = chrome.runtime.getURL("packages/prism.css");
+    if(currentTheme==="dark"){
+      prismTheme.href = chrome.runtime.getURL("packages/prism.css");
+    }else{
+      prismTheme.href = chrome.runtime.getURL("packages/prism-light.css");
+    }
+    
     shadowRoot.appendChild(prismTheme);
     const styleElement = document.createElement("style");
     styleElement.textContent = componentStyles;
     shadowRoot.appendChild(styleElement);
     const uiWrapper = document.createElement("div");
     uiWrapper.className = "ui-wrapper";
+    uiWrapper.classList.add(currentTheme === "dark" ? "dark" : "light");
     shadowRoot.appendChild(uiWrapper);
     originalElement.parentNode.insertBefore(
       container,
